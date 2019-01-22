@@ -16,7 +16,6 @@ public class Calculo_notas {
         System.out.println("Numero de Alumnos");    
         
         
-     
         Alumno numero1 = new Alumno();
         numero1.introducirDatos();
         System.out.println(numero1.calcularNota());
