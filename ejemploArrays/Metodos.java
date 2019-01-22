@@ -1,5 +1,6 @@
 package ejemploArrays;
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,7 +12,7 @@ public class Metodos {
     int[] notas = {2,3,4,3,2,6,4,5,2,1};
     
    
-    /*public int darValor(){
+    public int darValor(){
         return Integer.parseInt(JOptionPane.showInputDialog(this));
     }
     
@@ -19,7 +20,8 @@ public class Metodos {
         for(int i=0;i<notas.length;i++){
             notas[i]=darValor();
         }
-    }*/
+    }
+    
     
     public void amosar(){
         for(int i=0;i<notas.length;i++){
@@ -56,6 +58,40 @@ public class Metodos {
 
         } return indice;
     }
+
+    public static int[] ordenarDirecto(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] < array[j]) {
+                    int aux = array[i];
+                    array[i] = array[j];
+                    array[j] = aux;
+                }
+            }
+        }
+        return array;
+    }
+    
+    public void ordenarDirectoInterno() {
+        notas=ordenarDirecto(notas);
+    }
+
+    public static int[] borrarEle(int[] array, int indice){
+      int[] nuevoArray = new int[array.length-1];  
+        for(int i = 0, j = 0 ; i < array.length ; i++){
+        if(i!=indice){
+            nuevoArray[j]=array[i];
+            j++;
+        } 
+        } return nuevoArray;
+            
+    }
+    
+    public void eliminarElementoInterno(int indice){
+        notas=borrarEle(notas, indice);
+    }
+    
+    
     
     
 
