@@ -11,7 +11,6 @@ public class Metodos {
     
     int[] notas = {2,3,4,3,2,6,4,5,2,1};
     
-   
     public int darValor(){
         return Integer.parseInt(JOptionPane.showInputDialog(this));
     }
@@ -21,8 +20,7 @@ public class Metodos {
             notas[i]=darValor();
         }
     }
-    
-    
+        
     public void amosar(){
         for(int i=0;i<notas.length;i++){
             System.out.println(notas[i]);
