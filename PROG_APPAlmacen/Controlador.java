@@ -30,7 +30,7 @@ public class Controlador {
        Object[] r =  bd.nombres(); 
         for (int i = 0; i < r.length; i++) {
             Object object = r[i];
-            System.out.println("Nombre: " + r[i] + "Ref: " + (String) bd.getRef(r[i]));
+            //System.out.println("Nombre: " + r[i] + "Ref: " + (String) bd.getRef(r[i]));
         }
     }
     
