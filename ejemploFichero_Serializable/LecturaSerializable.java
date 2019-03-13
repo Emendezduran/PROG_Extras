@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 
 
@@ -18,7 +19,19 @@ public class LecturaSerializable {
         try {
             f = new FileInputStream(nombre+".dat");
             ler = new ObjectInputStream(f);
-            Alumno a1 = (Alumno)ler.readObject();
+            boolean x = true;
+            ArrayList<Alumno> alumnos = new ArrayList<>();
+            
+            
+            while (x = true) {
+                if (f.available() > 0) {
+                    Alumno a1 = (Alumno) ler.readObject();
+                    alumnos.add(a1);
+                } else {
+                    x = false;
+                }
+                System.out.println(alumnos);
+            }
             
         } catch(ClassNotFoundException ex){
             System.out.println("ERROR: NO EXISTE LA CLASE" + ex.getMessage());
