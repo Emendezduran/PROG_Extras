@@ -3,6 +3,7 @@ package ejemplo_JFrame;
 
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ public class Componentes {
     JButton boton1, boton2;
     JLabel etiqueta;
     JTextField lineaTxt;
+    JComboBox comboB;
     
     public void crearVentana(){
         //INSTANCIACION
@@ -24,16 +26,21 @@ public class Componentes {
         boton2 = new JButton("Boton2");
         etiqueta = new JLabel();
         lineaTxt = new JTextField(20);
+        comboB = new JComboBox();
         
         //CARACTERISTICAS
         marco.setSize(800, 400);
         panel.setSize(800, 400);
         panel.setBackground(Color.red);
-        etiqueta.setText("NombreEtiqueta");
+        etiqueta.setText("Etiqueta");
         etiqueta.setBounds(50, 100, 50, 10);
         boton1.setBounds(200, 300, 20, 10);
         boton2.setBounds(400, 300, 20, 10);
         lineaTxt.setBounds(100, 100, 30, 20);
+        lineaTxt.setText("*********");
+        
+        //DESACTIVAMOS Layout PARA PERSONALIZAR
+        panel.setLayout(null);
         
         //AÑADIR COMPONENTES
         //al panel
@@ -50,8 +57,7 @@ public class Componentes {
         //CIERRE EN X
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        //DESACTIVAMOS Layout PARA PERSONALIZAR
-        panel.setLayout(null);
+
         
         
 

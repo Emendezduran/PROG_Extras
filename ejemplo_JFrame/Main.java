@@ -4,8 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Componentes v1 = new Componentes();
-        v1.crearVentana();
 
+        
+        Layouts l = new Layouts();
+        //l.disFlowLayout();
+        //l.boxLayout();
+        //l.borderLayout();
+        l.gridLayout();
     }
 }
