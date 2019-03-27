@@ -9,32 +9,33 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Eventos implements ActionListener {
+public class Eventos {
 
     JFrame marco;
     JPanel panel;
     JButton boton;
-    
-    public void iniComp(){
-        
+
+    public void iniComp() {
+
         marco = new JFrame("EVENTOS");
         panel = new JPanel();
         boton = new JButton("vermello");
         marco.setSize(400, 200);
         panel.add(boton);
         marco.add(panel);
-        
         marco.setVisible(true);
         marco.setDefaultCloseOperation(3);
-        //Selecionando eventos 
-        boton.addActionListener(this);
-    }    
+        boton.addActionListener(new EjecutarEvento());
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        panel.setBackground(Color.red);
     }
-    
-    
-    
+
+    public class EjecutarEvento implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setBackground(Color.red);
+        }
+
+    }
+
 }
